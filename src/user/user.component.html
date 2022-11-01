@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="card">
+    <label for="search-input"><b>Search login:</b></label>
+    <input autofocus id="userlogin" name="userlogin" type="search" #userlogin
+           (keyup)="getUserByLogin(userlogin.value)">
+    <hr>
+
+    <div class="row">
+      <div class="column">
+        <a target="_blank" href="{{userResult.avatar_url}}">
+          <img class="img-style" src={{userResult.avatar_url}}>
+        </a>
+        <p class="caption"><b>Name:</b><span class="to-left">{{userResult.name}}</span></p>
+        <hr>
+        <p class="caption"><b>Login:</b><span class="to-left">{{userResult.login}}</span></p>
+        <hr>
+      </div>
+
+      <div class="column">
+        <p><b>Url to GitHub:</b><a target="_blank" href="{{userResult.html_url}}">{{userResult.html_url}}</a></p>
+        <hr>
+        <p><b>Blog:</b><a target="_blank" href="{{userResult.blog}}">{{userResult.blog}}</a></p>
+        <hr>
+        <p><b>Location:</b><span class="to-left">{{userResult.location}}</span></p>
+        <hr>
+        <p><b>Email:</b><span class="to-left">{{userResult.email}}</span></p>
+        <hr>
+
+        <div class="string-followers">
+          <p><b>Followers:</b> {{userResult.followers}}</p>
+          <p><b>Following:</b> {{userResult.following}}</p>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
